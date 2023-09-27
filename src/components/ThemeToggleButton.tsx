@@ -11,8 +11,7 @@ type ThemeToggleButtonProps = Omit<IconButtonProps, 'aria-label'>;
 const iconSize = 20;
 
 const RoundButton = styled(IconButton, transientOptions)`
-  box-shadow: 0 0 100px 20px
-    ${({ $colorMode }) => ($colorMode === 'light' ? 'black' : 'white')};
+  box-shadow: 0 0 100px 20px;
   & svg {
     width: ${iconSize}px;
     height: ${iconSize}px;
@@ -24,7 +23,7 @@ function ThemeToggleButton(props: ThemeToggleButtonProps): JSX.Element {
 
   return (
     <RoundButton
-      $colorMode={colorMode}
+      colorMode={colorMode}
       onClick={toggleColorMode}
       icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
       aria-label={`Activate ${colorMode === 'light' ? 'dark' : 'light'} mode`}
